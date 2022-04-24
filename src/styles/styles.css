@@ -12,6 +12,10 @@
   --transition-speed: 0.5s;
 }
 
+* {
+  font-family: 'Inter', sans-serif;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -47,6 +51,110 @@ html {
   border-radius: 0.8rem;
 }
 
+.App .container .timer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin-top: 16rem;
+  color: var(--white);
+  font-size: 2.4rem;
+}
+
+.App .container .timer span {
+  margin: 0 0.4rem;
+  font-weight: 700;
+}
+
+.App .container .loser-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 4rem;
+}
+
+.App .container .loser-container h1, .App .container .loser-container p {
+  margin: 0;
+  color: var(--white);
+}
+
+.App .container .loser-container h1 {
+  font-size: 3.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.App .container .loser-container p {
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+}
+
+.App .container .loser-container button {
+  height: 4rem;
+  width: 24rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background-color: var(--red);
+  color: aliceblue;
+}
+
+.App .container .winner-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 4rem;
+}
+
+.App .container .winner-container h1, .App .container .winner-container p {
+  margin: 0;
+  color: var(--white);
+}
+
+.App .container .winner-container h1 {
+  font-size: 3.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.App .container .winner-container p {
+  margin-bottom: 2rem;
+  font-size: 2.8rem;
+}
+
+.App .container .winner-container button {
+  height: 4rem;
+  width: 24rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  background-color: var(--green);
+  color: aliceblue;
+}
+
 .App .container .choice-btns {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -74,9 +182,10 @@ html {
   background-color: var(--light-grey);
   width: 6.4rem;
   height: 6.4rem;
-  margin: 6rem 0 3.4rem;
+  margin: 6rem 0 2.4rem;
   color: var(--white);
   font-size: 4rem;
+  font-weight: 700;
   position: relative;
   z-index: 3;
 }
@@ -129,15 +238,23 @@ html {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  color: var(--light-grey);
-  font-weight: 500;
-  font-size: 1rem;
-  margin: 2rem 12rem;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 1rem 6rem;
+  line-height: 1.6;
 }
 
 .App .container .instructions button {
-  margin: 0 auto;
-  width: 10rem;
+  margin: 2rem auto;
+  height: 4rem;
+  width: 12rem;
+  background-color: var(--green);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 @-webkit-keyframes rotate-block1 {
