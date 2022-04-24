@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 export default function Timer(props) {
 
-    const [timer, setTimer] = useState(40);
+    const [timer, setTimer] = useState(20);
     const [timerColor, setTimerColor] = useState("#37b24d");
     const { score, handleGameLoss } = props;
 
@@ -11,9 +11,9 @@ export default function Timer(props) {
             if(timer !== -1) {
                 setTimer(timer - 1);
             }
-            if(timer <= 15 && timer >= 5) {
+            if(timer <= 11 && timer >= 6) {
                 setTimerColor("#ffd43b");
-            } else if(timer <= 5) {
+            } else if(timer < 6) {
                 setTimerColor("#c92a2a");
             } 
             if(timer === 0 && score < 100) {

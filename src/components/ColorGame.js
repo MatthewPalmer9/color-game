@@ -26,7 +26,6 @@ export default function ColorGame() {
     }
 
     useEffect(() => {
-        setPlacement(Math.floor(Math.random() * 2 + 1));
         setCurrentWord(filteredWord[Math.floor(Math.random() * filteredWord.length)]);
 
         if(score === 100) {
@@ -46,6 +45,7 @@ export default function ColorGame() {
 
     // GAME START
     const handleGameStart = () => {
+        setPlacement(Math.floor(Math.random() * 2 + 1));
         setGameOn(true);
     }
 
@@ -66,6 +66,7 @@ export default function ColorGame() {
     // USER EVENT
     const handleUserPick = (e) => {
         e.preventDefault();
+        setPlacement(Math.floor(Math.random() * 2 + 1));
         const choice = document.getElementById(e.target.name).innerText;
         const hexColorOfChoice = colorArr[colorWordArr.indexOf(choice)];
 
