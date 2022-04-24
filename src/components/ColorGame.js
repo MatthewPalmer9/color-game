@@ -130,9 +130,10 @@ export default function ColorGame() {
                             <>
                                 <div className="instructions">
                                     <p>
-                                        You have 40 seconds in total. The goal is to achieve a score of 100. You
-                                        must choose the correct COLOR, not the matching WORD! When the game begins, use
-                                        the LEFT (&larr;) and RIGHT (&rarr;) arrow keys on screen to make your choices.
+                                        You have 20 seconds in total. Correct answers are +10, Incorrect answers are -10. 
+                                        The goal is to achieve a score of 100. You must choose the correct COLOR, not the 
+                                        matching WORD! When the game begins, use the LEFT (&larr;) and RIGHT (&rarr;) arrow 
+                                        keys buttons on screen to make your choices.
                                     </p>
                                     <button onClick={handleGameStart}>START</button>
                                 </div>
