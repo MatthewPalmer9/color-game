@@ -1,5 +1,129 @@
+:root {
+    --black: #212529;
+    --white: aliceblue;
+    --light-grey: rgba(248, 249, 250, 0.5);
+    --grey: #343a40;
+    --red: #c92a2a;
+    --orange: #e8590c;
+    --yellow: #ffd43b;
+    --green: #37b24d;
+    --blue: #1971c2;
+    --purple: #862e9c;
+    --transition-speed: 0.5s;
+}
+
+html {
+    font-size: 62.5%;
+}
+
 .App {
-    background-color: black;
+    display: flex;
+    justify-content: center;
+    background-color: var(--grey);
     height: 100vh;
     width: 100vw;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+        background-color: #212529;
+        width: 100%;
+        max-width: 60rem;
+        height: 44rem;
+        margin: 6rem 2rem;
+        border-radius: 0.8rem;
+
+        .choice-btns {
+            display: flex;
+            justify-content: space-around;
+            gap: 4rem;
+
+            button {
+                width: 8rem;
+                height: 4rem;
+            }
+        }
+
+        .score {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--light-grey);
+            width: 6.4rem;
+            height: 6.4rem;
+            margin: 6rem 0 3.4rem;
+            color: var(--white);
+            font-size: 4rem;
+            position: relative;
+            z-index: 3;
+
+            &::before, &::after {
+                content: '';
+                background-color: black;
+                width: 10rem;
+                height: 10rem; 
+                position: absolute;
+                transform: translate(50% 50%);
+            }
+
+            &::before {
+                z-index:-1;
+                border-radius: 45%;
+                animation: rotate-block1 infinite 5s linear;
+            }
+            
+            &::after {
+                z-index: -1;
+                border-radius: 47%;
+                animation: rotate-block2 infinite 6s linear;
+
+            }
+
+        }
+        .current-game {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+
+            span {
+                font-size: 2rem;
+                text-transform: uppercase;
+            }
+        }
+
+        .instructions {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            color: var(--light-grey);
+            font-weight: 500;
+            font-size: 1rem;
+            margin: 2rem 12rem;
+
+            button {
+                margin: 0 auto;
+                width: 10rem;
+            }
+        }
+    }
+}
+
+@keyframes rotate-block1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-block2 {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
 }
