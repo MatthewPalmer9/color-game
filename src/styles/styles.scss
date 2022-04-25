@@ -1,6 +1,7 @@
 :root {
     --black: #212529;
-    --white: aliceblue;
+    --faded-white: rgba(240, 248, 255, 0.6);
+    --white: rgb(240, 248, 255);
     --light-grey: rgba(248, 249, 250, 0.5);
     --grey: #343a40;
     --red: #c92a2a;
@@ -18,26 +19,61 @@
 
 html {
     font-size: 62.5%;
+    background-color: var(--grey);
 }
 
 .App {
     display: flex;
     justify-content: center;
-    background-color: var(--grey);
-    height: 100vh;
-    width: 100vw;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .creator-credit {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: var(--faded-white);
+        text-align: center;
+
+        .socials ul {
+            display: flex;
+            list-style: none;
+            font-size: 2.4rem;
+            gap: 1.6rem;
+            margin: 0 auto;
+            padding: 0;
+
+            li {
+                text-decoration: none;
+                color: var(--faded-white);
+            }
+
+            li {
+                &:hover {
+                    cursor: pointer;
+                    color: var(--white);
+                }
+            }
+        }
+    }
 
     .container {
         display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-        // justify-content: center;
         align-items: center;
         background-color: #212529;
-        width: 100%;
         max-width: 60rem;
+        min-width: 40rem;
         height: 44rem;
-        margin: 6rem 2rem;
         border-radius: 0.8rem;
+        padding: 2rem;
+        margin-top: 10rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
 
         .timer {
             display: flex;
@@ -58,7 +94,9 @@ html {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin: 0 4rem;
+            margin: 0 auto;
+            max-width: 60rem;
+            
 
             h1, p {
                 margin: 0;
@@ -127,6 +165,10 @@ html {
             gap: 4rem;
             margin-top: 4rem;
 
+            ion-icon {
+                pointer-events: none;
+            }
+
             button {
                 display: flex;
                 justify-content: center;
@@ -135,7 +177,9 @@ html {
                 height: 4.4rem;
                 font-size: 3rem;
                 margin: 0;
-                padding: 0;
+                padding: 2.6rem;
+                border: none;
+                border-radius: 1rem;
 
                 &:hover {
                     cursor: pointer;
@@ -159,9 +203,6 @@ html {
 
             &::before, &::after {
                 content: '';
-                background-color: black;
-                width: 10rem;
-                height: 10rem; 
                 position: absolute;
                 transform: translate(50% 50%);
             }
@@ -170,13 +211,18 @@ html {
                 z-index:-1;
                 border-radius: 45%;
                 animation: rotate-block1 infinite 5s linear;
+                width: 10.5rem;
+                height: 10.5rem; 
+                background-color: rgb(20, 20, 20);
             }
             
             &::after {
                 z-index: -1;
                 border-radius: 47%;
                 animation: rotate-block2 infinite 6s linear;
-
+                width: 10rem;
+                height: 10rem; 
+                background-color: black;
             }
 
         }
@@ -184,6 +230,7 @@ html {
             display: flex;
             justify-content: center;
             gap: 2rem;
+            // width: 100%;
 
             span {
                 font-size: 2rem;

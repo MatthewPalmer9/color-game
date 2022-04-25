@@ -1,6 +1,7 @@
 :root {
   --black: #212529;
-  --white: aliceblue;
+  --faded-white: rgba(240, 248, 255, 0.6);
+  --white: rgb(240, 248, 255);
   --light-grey: rgba(248, 249, 250, 0.5);
   --grey: #343a40;
   --red: #c92a2a;
@@ -18,6 +19,7 @@
 
 html {
   font-size: 62.5%;
+  background-color: var(--grey);
 }
 
 .App {
@@ -27,12 +29,17 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: var(--grey);
-  height: 100vh;
-  width: 100vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
 }
 
-.App .container {
+.App .creator-credit {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -40,15 +47,61 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: var(--faded-white);
+  text-align: center;
+}
+
+.App .creator-credit .socials ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  font-size: 2.4rem;
+  gap: 1.6rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.App .creator-credit .socials ul li {
+  text-decoration: none;
+  color: var(--faded-white);
+}
+
+.App .creator-credit .socials ul li:hover {
+  cursor: pointer;
+  color: var(--white);
+}
+
+.App .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  align-items: center;
   background-color: #212529;
-  width: 100%;
   max-width: 60rem;
+  min-width: 40rem;
   height: 44rem;
-  margin: 6rem 2rem;
   border-radius: 0.8rem;
+  padding: 2rem;
+  margin-top: 10rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .App .container .timer {
@@ -83,7 +136,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 4rem;
+  margin: 0 auto;
+  max-width: 60rem;
 }
 
 .App .container .loser-container h1, .App .container .loser-container p {
@@ -165,6 +219,10 @@ html {
   margin-top: 4rem;
 }
 
+.App .container .choice-btns ion-icon {
+  pointer-events: none;
+}
+
 .App .container .choice-btns button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,7 +237,9 @@ html {
   height: 4.4rem;
   font-size: 3rem;
   margin: 0;
-  padding: 0;
+  padding: 2.6rem;
+  border: none;
+  border-radius: 1rem;
 }
 
 .App .container .choice-btns button:hover {
@@ -209,9 +269,6 @@ html {
 
 .App .container .score::before, .App .container .score::after {
   content: '';
-  background-color: black;
-  width: 10rem;
-  height: 10rem;
   position: absolute;
   -webkit-transform: translate(50% 50%);
           transform: translate(50% 50%);
@@ -222,6 +279,9 @@ html {
   border-radius: 45%;
   -webkit-animation: rotate-block1 infinite 5s linear;
           animation: rotate-block1 infinite 5s linear;
+  width: 10.5rem;
+  height: 10.5rem;
+  background-color: #141414;
 }
 
 .App .container .score::after {
@@ -229,6 +289,9 @@ html {
   border-radius: 47%;
   -webkit-animation: rotate-block2 infinite 6s linear;
           animation: rotate-block2 infinite 6s linear;
+  width: 10rem;
+  height: 10rem;
+  background-color: black;
 }
 
 .App .container .current-game {

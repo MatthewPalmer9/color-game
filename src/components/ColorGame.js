@@ -103,8 +103,8 @@ export default function ColorGame() {
                         ))} 
                     </div>
                     <div className="choice-btns">
-                        <button onClick={handleUserPick} name="right">&larr;</button>
-                        <button onClick={handleUserPick} name="left">&rarr;</button>
+                        <button onClick={handleUserPick} name="right"><ion-icon name="arrow-back-outline"></ion-icon></button>
+                        <button onClick={handleUserPick} name="left"><ion-icon name="arrow-forward-outline"></ion-icon></button>
                     </div>
                     <Timer score={score} handleGameLoss={handleGameLoss} />
                     </>
